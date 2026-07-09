@@ -1,0 +1,101 @@
+
+<style>
+.tier-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; flex: 1; min-width: 0; }
+.tier-card.featured { border: 2px solid var(--color-border-info); }
+.tier-name { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px; }
+.tier-price { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 8px 0 2px; }
+.tier-sub { font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px; }
+.tier-feature { font-size: 12px; color: var(--color-text-secondary); padding: 4px 0; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; gap: 6px; align-items: flex-start; }
+.tier-feature:last-child { border-bottom: none; }
+.badge-best { background: var(--color-background-info); color: var(--color-text-info); font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); display: inline-block; margin-bottom: 8px; }
+.calc-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; color: var(--color-text-secondary); }
+.calc-row input { flex: 1; }
+.calc-row span { min-width: 80px; text-align: right; color: var(--color-text-primary); font-weight: 500; }
+.total-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0 0; border-top: 0.5px solid var(--color-border-secondary); margin-top: 4px; }
+</style>
+
+<h2 class="sr-only">Pricing tiers and monthly cost calculator for NDE SaaS</h2>
+
+<div style="display:flex; gap:12px; margin-bottom:1.5rem; flex-wrap:wrap;">
+  <div class="tier-card">
+    <p class="tier-name">Starter</p>
+    <p class="tier-price">Rp 1,5 jt</p>
+    <p class="tier-sub">/ bulan · hingga 50 pengguna</p>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>NDE internal &amp; eksternal</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>Workflow 3 level verificator</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>5 GB IPFS storage</div>
+    <div class="tier-feature"><i class="ti ti-x" style="font-size:14px;margin-top:1px;color:var(--color-text-tertiary)" aria-hidden="true"></i>Tidak termasuk SK</div>
+    <div class="tier-feature"><i class="ti ti-x" style="font-size:14px;margin-top:1px;color:var(--color-text-tertiary)" aria-hidden="true"></i>Tidak termasuk E-Sign</div>
+  </div>
+
+  <div class="tier-card featured">
+    <span class="badge-best">Paling populer</span>
+    <p class="tier-name">Business</p>
+    <p class="tier-price">Rp 8 jt</p>
+    <p class="tier-sub">/ bulan · hingga 500 pengguna</p>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>NDE + SK (mutasi &amp; umum)</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>Workflow tak terbatas</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>50 GB IPFS storage</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>E-Sign 50 dok/bulan</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>Disposisi + pelacakan</div>
+  </div>
+
+  <div class="tier-card">
+    <p class="tier-name">Enterprise / Pemda</p>
+    <p class="tier-price">Custom</p>
+    <p class="tier-sub">Harga negosiasi · pengguna tak terbatas</p>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>Semua fitur Business</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>SSO (LDAP / Entra ID)</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>On-premise option</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>White-label domain</div>
+    <div class="tier-feature"><i class="ti ti-check" style="font-size:14px;margin-top:1px" aria-hidden="true"></i>Dedicated support</div>
+  </div>
+</div>
+
+<div style="background:var(--color-background-secondary); border-radius:var(--border-radius-lg); padding:1.25rem;">
+  <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 12px;">Kalkulator biaya bulanan — paket Business</p>
+  
+  <div class="calc-row">
+    <label>Jumlah pengguna</label>
+    <input type="range" min="50" max="500" step="10" value="200" id="users" oninput="calc()">
+    <span id="users-out">200</span>
+  </div>
+  <div class="calc-row">
+    <label>E-Sign dokumen/bulan</label>
+    <input type="range" min="0" max="300" step="10" value="80" id="esign" oninput="calc()">
+    <span id="esign-out">80</span>
+  </div>
+  <div class="calc-row">
+    <label>Storage tambahan (GB)</label>
+    <input type="range" min="0" max="200" step="10" value="0" id="storage" oninput="calc()">
+    <span id="storage-out">0 GB</span>
+  </div>
+
+  <div class="total-row">
+    <span style="font-size:13px;color:var(--color-text-secondary)">Estimasi total / bulan</span>
+    <span style="font-size:20px;font-weight:500;color:var(--color-text-primary)" id="total">Rp 8.900.000</span>
+  </div>
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin:6px 0 0">E-Sign overage: Rp 15.000/dok · Storage: Rp 50.000/10GB</p>
+</div>
+
+<div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+  <button onclick="sendPrompt('What would the Enterprise pricing look like for a 2000-person BUMN?')">Simulasi Enterprise ↗</button>
+  <button onclick="sendPrompt('How should E-Sign overage pricing be structured for NDE SaaS?')">Strategi E-Sign pricing ↗</button>
+</div>
+
+<script>
+function fmt(n) { return 'Rp ' + Math.round(n).toLocaleString('id-ID'); }
+function calc() {
+  const users = parseInt(document.getElementById('users').value);
+  const esign = parseInt(document.getElementById('esign').value);
+  const storage = parseInt(document.getElementById('storage').value);
+  document.getElementById('users-out').textContent = users;
+  document.getElementById('esign-out').textContent = esign;
+  document.getElementById('storage-out').textContent = storage + ' GB';
+  const base = 8000000;
+  const esignOverage = Math.max(0, esign - 50) * 15000;
+  const storageOverage = Math.floor(storage / 10) * 50000;
+  document.getElementById('total').textContent = fmt(base + esignOverage + storageOverage);
+}
+calc();
+</script>

@@ -1,0 +1,98 @@
+
+<style>
+.brand-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 12px; }
+.brand-card.top { border: 2px solid var(--color-border-info); }
+.brand-name { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; letter-spacing: -0.3px; }
+.brand-domain { font-size: 12px; color: var(--color-text-info); margin: 0 0 8px; font-family: var(--font-mono); }
+.brand-meaning { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 10px; line-height: 1.5; }
+.brand-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11px; padding: 3px 10px; border-radius: var(--border-radius-md); }
+.tag-good { background: var(--color-background-success); color: var(--color-text-success); }
+.tag-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+.score-row { display: flex; gap: 16px; margin-top: 10px; font-size: 11px; color: var(--color-text-tertiary); }
+.score-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.score-bar { width: 32px; height: 4px; border-radius: 2px; background: var(--color-border-tertiary); overflow: hidden; }
+.score-fill { height: 100%; border-radius: 2px; background: var(--color-text-info); }
+.badge-rec { background: var(--color-background-info); color: var(--color-text-info); font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); display: inline-block; margin-bottom: 8px; }
+</style>
+
+<h2 class="sr-only">Brand name candidates for NDE SaaS product targeting Indonesian enterprise market</h2>
+
+<div class="brand-card top">
+  <span class="badge-rec">Rekomendasi utama</span>
+  <p class="brand-name">Suratnesia</p>
+  <p class="brand-domain">suratnesia.id · app.suratnesia.id</p>
+  <p class="brand-meaning">Gabungan "surat" (surat resmi, letter) + "nesia" (Indonesia/Nusantara). Terasa lokal, resmi, tapi modern. Mudah diucapkan dalam bahasa Indonesia dan bahasa Inggris.</p>
+  <div class="brand-tags">
+    <span class="tag tag-good">Terasa Indonesia</span>
+    <span class="tag tag-good">Mudah diingat</span>
+    <span class="tag tag-good">Domain .id tersedia</span>
+    <span class="tag tag-good">Tidak ada merek lain</span>
+    <span class="tag tag-good">B2B enterprise feel</span>
+  </div>
+  <div class="score-row">
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:95%"></div></div>Memorability</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:90%"></div></div>Lokalitas</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:85%"></div></div>Enterprise feel</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:100%"></div></div>Domain availability</div>
+  </div>
+</div>
+
+<div class="brand-card">
+  <p class="brand-name">Nadiwa</p>
+  <p class="brand-domain">nadiwa.id · nadiwa.co.id</p>
+  <p class="brand-meaning">Dari "nadi" (nadi = pulse, heartbeat) + "wa" — mengacu pada aliran dokumen sebagai detak organisasi. Terasa modern, singkat, mudah sebagai subdomain: pt-kai.nadiwa.id.</p>
+  <div class="brand-tags">
+    <span class="tag tag-good">Singkat &amp; bersih</span>
+    <span class="tag tag-good">Subdomain-friendly</span>
+    <span class="tag tag-good">Tech startup feel</span>
+    <span class="tag tag-warn">Kurang eksplisit ke dokumen</span>
+  </div>
+  <div class="score-row">
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:85%"></div></div>Memorability</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:70%"></div></div>Lokalitas</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:75%"></div></div>Enterprise feel</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:90%"></div></div>Domain availability</div>
+  </div>
+</div>
+
+<div class="brand-card">
+  <p class="brand-name">Warkaflow</p>
+  <p class="brand-domain">warkaflow.id · warkaflow.com</p>
+  <p class="brand-meaning">"Warka" dari "warkat" (dokumen resmi dalam perbankan &amp; administrasi Indonesia) + "flow". Langsung mengkomunikasikan alur dokumen resmi. Resonan kuat di segmen BUMN perbankan/keuangan.</p>
+  <div class="brand-tags">
+    <span class="tag tag-good">Sangat eksplisit</span>
+    <span class="tag tag-good">Resonan di fintech/bank</span>
+    <span class="tag tag-warn">Kurang luas untuk semua sektor</span>
+    <span class="tag tag-warn">Agak panjang</span>
+  </div>
+  <div class="score-row">
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:75%"></div></div>Memorability</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:88%"></div></div>Lokalitas</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:80%"></div></div>Enterprise feel</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:80%"></div></div>Domain availability</div>
+  </div>
+</div>
+
+<div class="brand-card">
+  <p class="brand-name">Doksana</p>
+  <p class="brand-domain">doksana.id · doksana.co.id</p>
+  <p class="brand-meaning">"Dok" (dokumen) + "sana" (suffix Indonesia yang familiar, juga terasa seperti nama orang — relatable). Ringan, ramah, mudah diucapkan. Cocok jika ingin tampil lebih approachable daripada enterprise-kaku.</p>
+  <div class="brand-tags">
+    <span class="tag tag-good">Sangat mudah diucap</span>
+    <span class="tag tag-good">Terasa human</span>
+    <span class="tag tag-warn">Lebih SME, kurang BUMN</span>
+  </div>
+  <div class="score-row">
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:88%"></div></div>Memorability</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:80%"></div></div>Lokalitas</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:60%"></div></div>Enterprise feel</div>
+    <div class="score-item"><div class="score-bar"><div class="score-fill" style="width:95%"></div></div>Domain availability</div>
+  </div>
+</div>
+
+<div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+  <button onclick="sendPrompt('Design a logo concept and color palette for Suratnesia')">Design Suratnesia branding ↗</button>
+  <button onclick="sendPrompt('Write a tagline and elevator pitch for Suratnesia in Bahasa Indonesia and English')">Tagline Suratnesia ↗</button>
+  <button onclick="sendPrompt('Generate more name candidates for NDE SaaS targeting Indonesian enterprise')">Nama lain ↗</button>
+</div>
