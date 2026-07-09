@@ -14,6 +14,7 @@ func TestLoadConfig(t *testing.T) {
 	os.Setenv("DB_USER", "postgres")
 	os.Setenv("DB_PASSWORD", "secret")
 	os.Setenv("DB_NAME", "suratnesia_db")
+	os.Setenv("DB_SSLMODE", "require")
 
 	cfg := Load()
 
@@ -23,6 +24,7 @@ func TestLoadConfig(t *testing.T) {
 	assert.Equal(t, "postgres", cfg.DBUser)
 	assert.Equal(t, "secret", cfg.DBPassword)
 	assert.Equal(t, "suratnesia_db", cfg.DBName)
+	assert.Equal(t, "require", cfg.DBSSLMode)
 
 	// Clean up env
 	os.Unsetenv("PORT")
@@ -31,4 +33,5 @@ func TestLoadConfig(t *testing.T) {
 	os.Unsetenv("DB_USER")
 	os.Unsetenv("DB_PASSWORD")
 	os.Unsetenv("DB_NAME")
+	os.Unsetenv("DB_SSLMODE")
 }

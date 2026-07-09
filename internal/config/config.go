@@ -13,6 +13,7 @@ type Config struct {
 	DBUser     string
 	DBPassword string
 	DBName     string
+	DBSSLMode  string
 }
 
 func Load() *Config {
@@ -28,6 +29,10 @@ func Load() *Config {
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")
 	dbName := os.Getenv("DB_NAME")
+	dbSSLMode := os.Getenv("DB_SSLMODE")
+	if dbSSLMode == "" {
+		dbSSLMode = "disable"
+	}
 
 	return &Config{
 		Port:       port,
@@ -36,5 +41,6 @@ func Load() *Config {
 		DBUser:     dbUser,
 		DBPassword: dbPassword,
 		DBName:     dbName,
+		DBSSLMode:  dbSSLMode,
 	}
 }
