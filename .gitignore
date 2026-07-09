@@ -2,3 +2,4 @@
 .DS_Store
 bin/
 golang-echo-backend-setup/
+.env
